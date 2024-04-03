@@ -3,7 +3,5 @@ import MoviesPage from "./movies/page";
 
 export default async function Home() {
   const movies = await getAllMovies();
-
-  console.log(movies);
   return <MoviesPage />;
 }
