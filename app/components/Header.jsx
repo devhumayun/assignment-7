@@ -1,12 +1,13 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const Header = () => {
     return (
         <header >
             <nav className="container flex items-center justify-between space-x-10 py-6 mx-auto">
-                <a href="index.html">
+                <Link href="/">
                     <Image src="/logo.svg" width={139} height={26} alt="Logo" />
-                </a>
+                </Link>
                 <ul className="flex items-center space-x-5">
                     <li>
                         <a

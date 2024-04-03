@@ -1,29 +1,26 @@
 import Image from "next/image";
+import Link from "next/link";
+import RatingStar from "./Rating";
 
 const MovieCard = ({ movie }) => {
-    const { backdrop_path } = movie
-    console.log(backdrop_path);
+    const { poster_path } = movie
     return (
 
         <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
-            <Image className="w-full object-cover" src={backdrop_path} alt="poster" width={100} height={100} />
+            <Image className="w-full object-cover" src={poster_path} alt="poster" width={80} height={80} />
             <figcaption className="pt-4">
-                <h3 className="text-xl mb-1">Iron Man</h3>
+                <h3 className="text-xl mb-1">{movie.title}</h3>
                 <p className="text-[#575A6E] text-sm mb-2">Action/Adventure/Sci-fi</p>
                 <div className="flex items-center space-x-1 mb-5">
-                    <img src="./assets/star.svg" width={14} height={14} alt="" />
-                    <img src="./assets/star.svg" width={14} height={14} alt="" />
-                    <img src="./assets/star.svg" width={14} height={14} alt="" />
-                    <img src="./assets/star.svg" width={14} height={14} alt="" />
-                    <img src="./assets/star.svg" width={14} height={14} alt="" />
+                    <RatingStar rating={movie.vote_average} />
                 </div>
-                <a
-                    className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
-                    href="./modal.html"
+                <Link
+                    className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm bg-[#00D991]"
+                    href={`/movies/${movie.id}`}
                 >
-                    <img src="./assets/tag.svg" alt="" />
+                    <Image src="/tag.svg" alt="tag" height={20} width={20} />
                     <span>Details</span>
-                </a>
+                </Link>
             </figcaption>
         </figure>
     )
