@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <div id="modal-root-portal"></div>
       </body>
     </html>
   );
