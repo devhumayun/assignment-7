@@ -22,7 +22,7 @@ const Modal = ({ children }) => {
         <dialog
             ref={modalRef}
             onClose={onHide}
-            className="relative w-[90%] bg-[#1D1E28] shadow-lg rounded-md text-white"
+            className="relative w-[80%] bg-[#1D1E28] shadow-lg rounded-md text-white"
         >
             <span
                 onClick={onHide}

@@ -1,5 +1,5 @@
-import MovieList from "../components/MovieList";
-import Sidebar from "../components/Sidebar";
+import MovieList from "@/app/components/MovieList";
+import Sidebar from "@/app/components/Sidebar";
 
 const MoviesPage = () => {
   return (
