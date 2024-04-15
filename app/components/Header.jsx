@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import LanguageSwitcher from "./LanguageSwitcher"
 
 const Header = () => {
     return (
@@ -32,6 +33,9 @@ const Header = () => {
                         >
                             <Image src="/shopping-cart.svg" width={24} height={24} alt="Cart" />
                         </a>
+                    </li>
+                    <li>
+                        <LanguageSwitcher />
                     </li>
                 </ul>
             </nav>

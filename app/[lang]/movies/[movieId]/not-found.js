@@ -9,7 +9,10 @@ export default function NotFound() {
   return (
     <div className="w-auto h-auto flex flex-col justify-center items-center">
       <div className="flex flex-col items-center gap-5">
-        <p>Movie with this id:{splitPath[2]} not found</p>
+        <p className="text-xl">
+          {" "}
+          This movie with {splitPath[3]} id was not found!
+        </p>
         <Link className=" bg-[#00D991] text-white p-2 rounded-md" href="/">
           Go to home
         </Link>
