@@ -12,11 +12,13 @@ const LanguageSwitcher = () => {
   const languages = [
     {
       'code': 'en',
-      'language': 'English'
+      'language': 'English',
+      "flag": "/usa.png"
     },
     {
       'code': 'bn',
-      'language': 'Bangla'
+      'language': 'Bangla',
+      "flag": "/bd.png"
     }
   ]
   const found = languages.find(lang => pathname.includes(lang.code));
@@ -25,10 +27,6 @@ const LanguageSwitcher = () => {
 
 
   const handleLanguageChange = lang => {
-    /* let path = pathname;
-    if (pathname.includes(selectedLanguage.code)) {
-      path = pathname.replace(selectedLanguage.code, lang);
-    } */
     setSelectedLanguage({ ...selectedLanguage, code: lang, language: lang === 'en' ? 'English' : 'Bangla' });
     setShowManu(false);
     router.push(`/${lang}`)
@@ -41,13 +39,25 @@ const LanguageSwitcher = () => {
           className="flex items-center gap-2"
           onClick={() => setShowManu(!showManu)}
         >
-          <Image
-            className="max-w-8"
-            src="/bd.png"
-            alt="bangla"
-            height={100}
-            width={165}
-          />
+          {
+            languages.code = "en" ? (
+              <Image
+                className="max-w-8"
+                src="/usa.png"
+                alt="bangla"
+                height={100}
+                width={165}
+              />
+            ) : (
+              <Image
+                className="max-w-8"
+                src="/bd.png"
+                alt="bangla"
+                height={100}
+                width={165}
+              />
+            )
+          }
           {selectedLanguage.language}
         </button>
         {showManu && (
@@ -61,7 +71,7 @@ const LanguageSwitcher = () => {
                 >
                   <Image
                     className="max-w-8"
-                    src="/bd.png"
+                    src={entry.flag}
                     alt="bangla"
                     height={100}
                     width={165}
