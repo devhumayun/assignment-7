@@ -1,7 +1,8 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-const Sidebar = () => {
+const Sidebar = ({ dict }) => {
+    console.log(dict.tranding);
     return (
         <aside>
             <ul className="space-y-2">
@@ -11,7 +12,7 @@ const Sidebar = () => {
                         href="#"
                     >
                         <Image src="/icons/trending.svg" width={24} height={24} alt="" />
-                        <span>Trending</span>
+                        <span>{dict?.tranding || "Tranding"}</span>
                     </Link>
                 </li>
                 <li>
@@ -25,7 +26,7 @@ const Sidebar = () => {
                             height={24}
                             alt=""
                         />
-                        <span>New Releases</span>
+                        <span>{dict?.new_releases}</span>
                     </Link>
                 </li>
                 <li>
@@ -39,7 +40,7 @@ const Sidebar = () => {
                             height={24}
                             alt=""
                         />
-                        <span>Coming Soon</span>
+                        <span>{dict?.coming_soon}</span>
                     </Link>
                 </li>
                 <li>
@@ -48,7 +49,7 @@ const Sidebar = () => {
                         href="#"
                     >
                         <Image src="/icons/favourite.svg" width={24} height={24} alt="" />
-                        <span>Favourites</span>
+                        <span>{dict?.favourites}</span>
                     </Link>
                 </li>
                 <li>
@@ -62,7 +63,7 @@ const Sidebar = () => {
                             height={24}
                             alt=""
                         />
-                        <span>Watch Later</span>
+                        <span>{dict?.watch}</span>
                     </Link>
                 </li>
             </ul>

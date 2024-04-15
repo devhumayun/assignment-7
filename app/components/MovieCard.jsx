@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import RatingStar from "./Rating";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, dict }) => {
     // const { poster_path } = movie
     return (
 
@@ -19,7 +19,7 @@ const MovieCard = ({ movie }) => {
                     className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm bg-[#00D991]"
                 >
                     <Image src="/tag.svg" alt="tag" height={20} width={20} />
-                    <span>Details</span>
+                    <span>{dict.details}</span>
                 </Link>
             </div>
         </div>
